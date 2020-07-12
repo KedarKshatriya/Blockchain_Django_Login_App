@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
-    <title>Register through Blockchain</title>
+    <title>Change Yoour Password</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
@@ -68,6 +68,7 @@ div.radio {
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
   padding: 14px 22px;
   border: 0;
+  margin: 30px auto 0;
   outline: none;
 }
 
@@ -78,13 +79,11 @@ div.radio {
 <body>
     <div class="row login-form">
         <div class="col-md-4 offset-md-4">
-            <h2 class="text-center form-heading">Register Form</h2>
+            <h2 class="text-center form-heading">Change Password</h2>
             <form class="custom-form">
                 <div class="form-group"><input class="form-control" id="cId" type="email" placeholder="Username"></div>
                 <div class="form-group"><input class="form-control" id="password" type="password" placeholder="Password"></div>
-                </div>
-                <br>
-                <button id="setMessageButton" class="btn btn-block btn-dark " style="margin-top: 15px; margin-left: 35%;margin-right: 35%;"type="button">Register</button></form>
+                </div><button id="setMessageButton" class="btn btn-block btn-dark " style="margin-top: 15px; margin-left: 35%;margin-right: 35%;"type="button">Update</button></form>
         </div>
     </div>
     <script>
@@ -180,10 +179,8 @@ div.radio {
       
   $("#setMessageButton").click(function () {
           cId = $("#cId").val();
-          password = $("#password").val();
-          time = Math.floor(Date.now() / 1000);
-          
-          RemixContract.methods.accCreate(cId,password,time).send({
+          password = $("#password").val();        
+          RemixContract.methods.accCreate(cId,password).send({
                 from:addressmeta}).then(function(response) {
             var result = response;
             alert("Data Sent");

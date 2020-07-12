@@ -6,3 +6,7 @@ def loginbl(request):
 
 def registerbl(request):
     return render(request,'dbapp/register.html')
+
+
+def forgetbl(request):
+    return render(request,'dbapp/forget.html')

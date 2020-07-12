@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('loginbl/', views.loginbl, name='loginbl'),
     path('registerbl/',views.registerbl,name='registerbl'),
+    path('forgetbl/',views.forgetbl,name='forgetbl'),
 ]
 
