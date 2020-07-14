@@ -23,9 +23,6 @@
       }
   ethereum.enable();
   
-      // Set a default account
-      //web3.eth.defaultAccount =
-      //var acc = web3.eth.requestAccounts().then(console.log);
       var myStorage = window.localStorage;
 
       var acc = web3.eth.requestAccounts().then(function(res){
@@ -40,8 +37,7 @@
       // Get the contract address
       var RemixContract = new web3.eth.Contract(abi,'0x4E86fD9f74364EBD22B816951B5c53bB79Dc874A');
 
-      // Get the contract abi
-      //var myMessage = RemixContract.at('0xACC2a019Af3EDF9D82B643273d582d67Db7F4048');
+   
 
       console.log(RemixContract);
       
