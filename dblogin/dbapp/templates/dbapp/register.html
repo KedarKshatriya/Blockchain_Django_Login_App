@@ -7,8 +7,8 @@
 <div class="row login-form">
         <div class="col-md-4 offset-md-4">
             <h2 class="text-center form-heading">Register Form</h2>
-            <form class="custom-form">
-                <div class="form-group"><input class="form-control" id="cId" type="email" placeholder="Username"></div>
+            <form class="custom-form" action="{%url 'registerbl'%}" method="POST">
+                <div class="form-group"><input class="form-control" name="usern" id="cId" type="email" placeholder="Username"></div>
                 <div class="form-group"><input class="form-control" id="password" type="password" placeholder="Password"></div>
                 </div>
                 <br>
@@ -35,6 +35,8 @@
       });
     
 
+
+
      var addressmeta = myStorage.getItem('address');
      var abi = abidata();
       // Get the contract address
@@ -55,6 +57,25 @@
             return result;
             });
       });
+
+ 
+    $("#setMessageButton").click(function(e) {
+    e.preventDefault();    
+    var cId = $("#cId").val();
+    $.ajax({ 
+        type: 'POST',
+        url: '{% url "registerbl" %}',
+        data: {
+          'usern':""+cId,
+          'address': ""+addressmeta,
+        },
+        success: function (xml) {
+          alert(xml);
+        } ,
+      });    
+}); 
+   
+   
 
 </script>
 {%endblock content%}
