@@ -12,7 +12,7 @@
                 </div><button id="setMessageButton" class="btn btn-block btn-dark " style="margin-top: 15px; margin-left: 35%;margin-right: 35%;"type="button">Login</button></form>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
 
       // Connect a the web3 provider
       if (typeof web3 !== 'undefined') {
@@ -35,68 +35,9 @@
     
 
      var addressmeta = myStorage.getItem('address');
-     
+     var abi = abidata();
       // Get the contract address
-      var RemixContract = new web3.eth.Contract([
-{
-  "constant": false,
-  "inputs": [
-    {
-      "internalType": "string",
-      "name": "_uId",
-      "type": "string"
-    },
-    {
-      "internalType": "string",
-      "name": "_password",
-      "type": "string"
-    },
-    {
-      "internalType": "uint256",
-      "name": "_time",
-      "type": "uint256"
-    }
-  ],
-  "name": "accCreate",
-  "outputs": [
-    {
-      "internalType": "bool",
-      "name": "b",
-      "type": "bool"
-    }
-  ],
-  "payable": false,
-  "stateMutability": "nonpayable",
-  "type": "function"
-},
-{
-  "constant": true,
-  "inputs": [
-    {
-      "internalType": "string",
-      "name": "_uId",
-      "type": "string"
-    },
-    {
-      "internalType": "string",
-      "name": "_password",
-      "type": "string"
-    }
-  ],
-  "name": "accLogin",
-  "outputs": [
-    {
-      "internalType": "bool",
-      "name": "a",
-      "type": "bool"
-    }
-  ],
-  "payable": false,
-  "stateMutability": "view",
-  "type": "function"
-}
-]
-,'0x4E86fD9f74364EBD22B816951B5c53bB79Dc874A');
+      var RemixContract = new web3.eth.Contract(abi,'0x4E86fD9f74364EBD22B816951B5c53bB79Dc874A');
 
       // Get the contract abi
       //var myMessage = RemixContract.at('0xACC2a019Af3EDF9D82B643273d582d67Db7F4048');
