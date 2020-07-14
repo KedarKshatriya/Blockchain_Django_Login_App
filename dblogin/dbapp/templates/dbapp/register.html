@@ -1,82 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "dbapp/base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
-    <title>Register through Blockchain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-    <style>
-        .login-form h2.form-heading {
-  color: #4c565e;
-  font-size: 24px;
-  padding-bottom: 20px;
-  font-weight: bold;
-}
+{% block title %}Login{% endblock title %}
 
-form.custom-form {
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border-top: 2px solid #6caee0;
-  padding: 40px;
-  color: #5f5f5f;
-}
+{%block content%}
 
-.login-form .custom-form .form-group {
-  margin-bottom: 25px;
-}
-
-.login-form .custom-form .form-group input {
-  border: 1px solid #ccc;
-}
-
-.login-form .custom-form button.btn.btn-default.btn-block.dropdown-toggle {
-  text-align: left;
-  color: #5f5f5f;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.login-form .custom-form ul.dropdown-menu {
-  width: 100%;
-  background: #fff;
-  color: #5f5f5f;
-}
-
-.login-form .custom-form ul.dropdown-menu li a {
-  color: #5f5f5f;
-  opacity: 0.8;
-}
-
-.login-form .custom-form ul.dropdown-menu li a:hover {
-  background: #fff;
-  opacity: 1;
-}
-
-div.radio {
-  margin: 14px 0;
-}
-
-.login-form .custom-form .submit-button {
-  border-radius: 2px;
-  background: #6caee0;
-  color: #ffffff;
-  font-weight: bold;
-  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
-  padding: 14px 22px;
-  border: 0;
-  outline: none;
-}
-
-
-    </style>
-</head>
-
-<body>
-    <div class="row login-form">
+<div class="row login-form">
         <div class="col-md-4 offset-md-4">
             <h2 class="text-center form-heading">Register Form</h2>
             <form class="custom-form">
@@ -192,10 +120,4 @@ div.radio {
       });
 
 </script>
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+{%endblock content%}
